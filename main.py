@@ -1,5 +1,6 @@
 from merchant_schema import Merchant
 from product_schema import Product
+from subscriber_schema import Subscriber
 from datetime import datetime
 
 
@@ -22,6 +23,16 @@ new_product = Product(
     product_freq_unit='weeks',
 )
 
+new_subscriber = Subscriber(
+    subscriber_id="abcd1234",
+    subscriber_name='sckhoo',
+    subscriber_detail='sourdough',
+    subscriber_email='sckhoo@gmail.com',
+    subscriber_date=datetime.today(),
+    subscriber_url='khooville.com',
+    subscriber_socmed=['x/sckhoo', 'fb/sckhoo'],
+)
+
 print(new_marchant.merchant_socmed)
 print(new_marchant.add(new_marchant.model_dump()))
 print(new_marchant.search_by_id("khoo"))
@@ -35,3 +46,10 @@ print(new_product.search_by_id("khoo"))
 print(new_product.modify_by_id(new_product.model_dump()))
 print(new_product.suspend_by_id("id_to_be_suspended"))
 print(new_product.delete_by_id("id_to_be_deleted"))
+
+print(new_subscriber.subscriber_name)
+print(new_subscriber.add(new_subscriber.model_dump()))
+print(new_subscriber.search_by_id("khoo"))
+print(new_subscriber.modify_by_id(new_subscriber.model_dump()))
+print(new_subscriber.suspend_by_id("id_to_be_suspended"))
+print(new_subscriber.delete_by_id("id_to_be_deleted"))
