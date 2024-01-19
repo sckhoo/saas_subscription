@@ -7,6 +7,8 @@ class Product(BaseModel):
     product_name : str
     product_detail : str
     product_date : datetime
+    product_freq : int
+    product_freq_unit : str
 
     @classmethod
     def add(cls, product_record):
