@@ -18,6 +18,8 @@ new_product = Product(
     product_name='sckhoo',
     product_detail='sourdough',
     product_date=datetime.today(),
+    product_freq=2,
+    product_freq_unit='weeks',
 )
 
 print(new_marchant.merchant_socmed)
