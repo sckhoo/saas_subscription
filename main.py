@@ -1,6 +1,8 @@
 from merchant_schema import Merchant
 from product_schema import Product
 from subscriber_schema import Subscriber
+from subscription_schema import Subscription
+
 from datetime import datetime
 
 
@@ -33,6 +35,16 @@ new_subscriber = Subscriber(
     subscriber_socmed=['x/sckhoo', 'fb/sckhoo'],
 )
 
+new_subscription = Subscription(
+    subscription_id="subscription12345",
+    subscriber_id="abcd1234",
+    merchant_id="abcd1234",
+    subscription_start=datetime.today(),
+    subscription_end=datetime.today(),
+    subscription_freq=4,
+    subscription_freq_unit='week',
+)
+
 print(new_marchant.merchant_socmed)
 print(new_marchant.add(new_marchant.model_dump()))
 print(new_marchant.search_by_id("khoo"))
@@ -53,3 +65,10 @@ print(new_subscriber.search_by_id("khoo"))
 print(new_subscriber.modify_by_id(new_subscriber.model_dump()))
 print(new_subscriber.suspend_by_id("id_to_be_suspended"))
 print(new_subscriber.delete_by_id("id_to_be_deleted"))
+
+print(new_subscription.subscription_id)
+print(new_subscription.add(new_subscription.model_dump()))
+print(new_subscription.search_by_id("khoo"))
+print(new_subscription.modify_by_id(new_subscription.model_dump()))
+print(new_subscription.suspend_by_id("id_to_be_suspended"))
+print(new_subscription.delete_by_id("id_to_be_deleted"))
